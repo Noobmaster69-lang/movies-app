@@ -1,11 +1,10 @@
 const request = require('supertest');
 const app = require('../app');
-
+const models = require('../models');
 let id; 
 
 test('GET /movies', async () => { 
     const res = await request(app).get('/movies');
-    console.log(res.body)
     expect(res.status).toBe(200);
     expect(res.body).toBeInstanceOf(Array);
  });
